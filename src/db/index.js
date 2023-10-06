@@ -1,6 +1,6 @@
 // aqui nao estou considerando token e nem o tempo que o usuario esta logado no sistema, apenas um CRUD para testar o sistema
 
-let user = [];
+let user = [{id: 0, email: "admin@admin.com", password: "123123", name: "Admin"}];
 
 const getUser = () => {
   if (user && user.length > 0) {
