@@ -15,9 +15,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/GlobalThemes.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
   </head>
   <body>
-    <div id="container">
+    <div id="BaseLayoutContainer">
+      <header class="text-white text-center py-2">
+        <h1>Sobre</h1>
+      </header>
       <div id="sidebar">
         <div
           class="d-flex flex-column justify-content-between col-auto bg-dark vh-100"
@@ -68,10 +72,45 @@
           </div>
         </div>
       </div>
-      <div id="content">sobre pai</div>
+      <content>
+        <div class="about">
+          <h1>Membros</h1>
+          <div class="members">
+            <div id="cardMember">
+              <img src="https://github.com/flaviozno.png" alt="anderson" />
+              <span>Anderson Alves Araújo</span>
+              <i>12011BCC031</i>
+            </div>
+            <div id="cardMember">
+              <img src="https://github.com/BruggerPedro.png" alt="pedro" />
+              <span>Pedro Murilo Brugger</span>
+              <i>12011BCC054</i>
+            </div>
+            <div id="cardMember">
+              <img src="https://github.com/flaviozno.png" alt="flavio" />
+              <span>Flávio Vezono Filho</span>
+              <i>11921BCC014</i>
+            </div>
+          </div>
+          <h1>Matéria</h1>
+          <div id="cardMember">
+            <img
+              src="https://www.facom.ufu.br/~rafaelaraujo/img/profile.jpg"
+              alt="rafale"
+            />
+            <span>Rafael Dias Araújo</span>
+            <i>Professor</i>
+          </div>
+          <p>Programação para a Internet</p>
+        </div>
+      </content>
+      <footer class="text-center py-1">
+        <p>&copy; 2023 Solaris Power. Todos os direitos reservados.</p>
+      </footer>
     </div>
   </body>
   <script type="text/javascript" src="../utils/handleUser.js"></script>
+  <script type="text/javascript" src="../services/api.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
     integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="

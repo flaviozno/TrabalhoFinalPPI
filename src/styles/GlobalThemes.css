@@ -24,49 +24,73 @@
 body {
   background-color: var(--white);
 }
-#container{
-  display: flex;
-  height: 100vh;
-}
 
-#sidebar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: auto;
-}
-
-.nav-pills li a:hover{
+.nav-pills li a:hover {
   background-color: var(--white);
 }
 
-#userStatus a i, span{
+#userStatus a i,
+span {
   cursor: pointer;
 }
+#BaseLayoutContainer {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 64px 1fr auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content"
+    "sidebar footer";
 
-#content{
-  padding: 1.2rem;
+  & > :nth-child(1) {
+    grid-area: header;
+  }
+
+  & > :nth-child(2) {
+    grid-area: sidebar;
+  }
+
+  & > :nth-child(3) {
+    grid-area: content;
+  }
+
+  & > :nth-child(4) {
+    grid-area: footer;
+  }
+}
+#BaseLayoutContainer content {
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#BaseLayoutContainer header{
+  background-color: var(--300);
+}
+
+#BaseLayoutContainer footer{
+  color: var(--400);
+  border-top: 1px solid var(--400);
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  margin: 1rem;
+}
+
+.card-img-top {
+  width: 200px;
+}
+
+#produtosWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin-left: 260px;
-}
-
-#produtos{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-}
-
-.card{
-  width: 200px;
-  margin: 1rem
-}
-
-
-.card-img-top{
-  width: 200px;
+  justify-content: center;
 }

@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
+:root {
+  --white: #f5f5f5;
+  --100: #2857b5;
+  --200: #1a3875;
+  --300: #3675f5;
+  --400: #0c1a36;
+  --500: #3069db;
+
+  --trans-02: all 0.2s ease;
+  --trans-03: all 0.3s ease;
+  --trans-04: all 0.4s ease;
+  --trans-05: all 0.5s ease;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.about span{
+    cursor: auto;
+}
+
+.about p {
+    font-size: 24px;
+}
+
+.members {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#cardMember {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--300);
+  padding: 1rem;
+  margin: 1rem;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 8px;
+}
+
+#cardMember img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 2px solid var(--white);
+  margin-bottom: 15px;
+}
+
+#cardMember span {
+  font-size: 14px;
+  cursor: auto ;
+}
+#cardMember i {
+  font-size: 12px;
+  font-weight: bold;
+}
+
