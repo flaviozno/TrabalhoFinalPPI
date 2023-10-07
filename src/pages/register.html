@@ -1,1 +1,107 @@
- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/GlobalThemes.css" />
+    <title>Registrar</title>
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div class="row border rounded-5 p-3 bg-white shadow box-area">
+        <div
+          class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+          style="background: #103cbe"
+        >
+          <p class="text-white fs-2">
+            <i class="fa-solid fa-solar-panel text-white"></i>
+          </p>
+          <small class="text-white text-wrap text-center" style="width: 17rem"
+            >Transforme a luz do sol em energia para o seu futuro!</small
+          >
+        </div>
+        <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+            <div class="header-text mb-4">
+              <h2>Registrar 😀</h2>
+              <p>Crie uma conta para acessar a plataforma!</p>
+            </div>
+            <div class="form-group mb-3">
+              <label for="photoUpload">Avatar: </label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="photoUpload"
+                accept="image/*"
+              />
+              <div id="photoPreview" class="mt-3 d-flex justify-content-center align-items-center"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control bg-light"
+                id="floatingName"
+                placeholder="Nome"
+              />
+              <label for="floatingName">Nome</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control bg-light"
+                id="floatingEmail"
+                placeholder="Email"
+              />
+              <label for="floatingEmail">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control form-control-lg bg-light fs-6"
+                id="floatingPassword"
+                placeholder="Senha"
+              />
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control form-control-lg bg-light fs-6"
+                id="floatingPasswordConfirm"
+                placeholder="Confirmar Senha"
+              />
+              <label for="floatingPasswordConfirm">Confirmar Senha</label>
+            </div>
+            <div class="input-group mb-3">
+              <button
+                class="btn btn-lg btn-primary w-100 fs-6"
+                onclick="handleRegister(event)"
+              >
+                Registrar
+              </button>
+            </div>
+            <div class="row">
+              <small
+                >Já tem uma conta?
+                <a href="./login.html">Faça o login</a></small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="../utils/handleUser.js"></script>
+  <script type="text/javascript" src="../db/index.js"></script>
+</html>
