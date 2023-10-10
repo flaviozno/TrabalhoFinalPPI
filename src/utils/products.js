@@ -50,7 +50,7 @@ const renderProducts = (products) => {
   }
 };
 
-fetch("../utils/products.json")
+fetch("../../src/utils/products.json")
   .then((response) => response.json())
   .then((data) => {
     allProducts = data.produtos_paineis_solar;

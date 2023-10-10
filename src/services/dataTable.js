@@ -15,7 +15,7 @@ $(document).ready(async function () {
       },
     ],
   });
-  let { produtos_paineis_solar } = await fetch("../utils/products.json").then(
+  let { produtos_paineis_solar } = await fetch("../../src/utils/products.json").then(
     (response) => response.json()
   );
   $("#itensTable").DataTable({

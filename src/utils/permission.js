@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("user"));
-  let route = window.location.href.split("/")[5];
+  let route = window.location.href.split("/")[4];
 
   let contentTag = document.getElementById("isVisible")
   let accountOPT = document.getElementById("account");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timerProgressBar: true,
         timer: 3500,
         willClose: () => {
-          location.href = "../pages/index.html";
+          location.href = "../../src/index.html";
         },
       });
     }

@@ -7,7 +7,7 @@ const updateUserStatus = (username) => {
 
   if (username) {
     userStatusElement.style.display = "inline";
-    userStatusElement.innerHTML = ` <a class="nav-link text-white" href="../pages/account.html">
+    userStatusElement.innerHTML = ` <a class="nav-link text-white" href="./account.html">
               <i class="fa-solid fa-user"></i>
                 <span class="d-none d-sm-inline">${username}</span>
           </a>`;
@@ -56,7 +56,7 @@ const handleRegister = (e) => {
     if (response) {
       isLoggedIn = true;
       localStorage.setItem("user", JSON.stringify(response));
-      location.href = "../pages/index.html";
+      location.href = "./index.html";
     }
   }
 };
@@ -78,7 +78,7 @@ const handleLogin = (e) => {
     if (response) {
       isLoggedIn = true;
       localStorage.setItem("user", JSON.stringify(response));
-      location.href = "../pages/index.html";
+      location.href = "./index.html";
     } else {
       Swal.fire({
         title: "Error",
@@ -98,7 +98,7 @@ if (
     "crud-users.html",
     "crud-itens.html",
     "account.html",
-  ].includes(window.location.href.split("/")[5])
+  ].includes(window.location.href.split("/")[4])
 )
   document.addEventListener("DOMContentLoaded", () => {
     let user = JSON.parse(localStorage.getItem("user"));
@@ -109,21 +109,21 @@ if (
 
 if (
   ["index.html", "sobre.html", "produtos.html"].includes(
-    window.location.href.split("/")[5]
+    window.location.href.split("/")[4]
   )
 )
   loginButton.addEventListener("click", () => {
-    location.href = "../pages/login.html";
+    location.href = "./login.html";
   });
 
 logoutButton.addEventListener("click", () => {
   localStorage.removeItem("user");
   isLoggedIn = false;
   updateUserStatus("");
-  location.href = "../pages/index.html";
+  location.href = "./index.html";
 });
 
-if (window.location.href.split("/")[5] === "register.html")
+if (window.location.href.split("/")[4] === "register.html")
   document.getElementById("photoUpload").addEventListener(
     "change",
     function () {
@@ -153,7 +153,7 @@ if (window.location.href.split("/")[5] === "register.html")
     true
   );
 
-if (window.location.href.split("/")[5] === "account.html")
+if (window.location.href.split("/")[4] === "account.html")
   document.addEventListener("DOMContentLoaded", () => {
     let user = JSON.parse(localStorage.getItem("user"));
     let name = document.getElementById("floatingName");
