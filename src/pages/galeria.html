@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Painel Usuário</title>
+    <title>Galeria</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -15,11 +15,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/GlobalThemes.css" />
+    <link rel="stylesheet" href="../styles/card.css" />
   </head>
   <body>
     <div id="BaseLayoutContainer">
       <header class="text-white text-center py-2">
-        <h1>Conta</h1>
+        <h1>Galeria</h1>
       </header>
       <div id="sidebar">
         <div
@@ -59,7 +60,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./calculadora.html" class="nav-link" aria-current="page">
+                <a
+                  href="./calculadora.html"
+                  class="nav-link"
+                  aria-current="page"
+                >
                   <i class="fa-solid fa-calculator"></i>
                   <span class="ms-2 d-none d-sm-inline">Calculadora</span>
                 </a>
@@ -71,7 +76,11 @@
                 </a>
               </li>
               <li class="nav-item d-none" id="crudItens">
-                <a href="./crud-itens.html" class="nav-link" aria-current="page">
+                <a
+                  href="./crud-itens.html"
+                  class="nav-link"
+                  aria-current="page"
+                >
                   <i class="fa-solid fa-list"></i>
                   <span class="ms-2 d-none d-sm-inline">CRUD Itens</span>
                 </a>
@@ -105,74 +114,58 @@
           </div>
         </div>
       </div>
-      <content id="isVisible" class="d-none">
-        <div class="row align-items-center">
-          <div class="header-text text-center">
-            <h2>Altere seus dados aqui!</h2>
+      <content id="isVisible">
+        <div id="produtos">
+          <div id="contentCard">
+            <img src="../assets/casa.jpeg" alt="Projeto 1"/>
+            <h3>Residência em São Paulo</h3>
+            <p>
+              Esta residência em São Paulo adotou a energia solar para reduzir
+              os custos de energia e reduzir a pegada de carbono.
+            </p>
+            <ul>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
           </div>
-          <div class="form-group mb-3">
-            <label for="photoUpload">Avatar: </label>
-            <input
-              type="file"
-              class="form-control-file"
-              id="photoUpload"
-              accept="image/*"
-            />
-            <div
-              id="photoPreview"
-              class="mt-3 d-flex justify-content-center align-items-center"
-            ></div>
+
+          <div id="contentCard">
+            <img src="../assets/empresa.jpg" alt="Projeto 2" />
+            <h3>Empresa de Tecnologia em Curitiba</h3>
+            <p>
+              Uma empresa de tecnologia em Curitiba instalou um grande sistema
+              solar para alimentar suas operações e contribuir para a
+              sustentabilidade.
+            </p>
+            <ul>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
           </div>
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control bg-light"
-              id="floatingName"
-              placeholder="Nome"
-            />
-            <label for="floatingName">Nome</label>
+
+          <div id="contentCard">
+            <img src="../assets/escola.jpeg" alt="Projeto 3" />
+            <h3>Escola em Brasília</h3>
+            <p>
+              Uma escola em Brasília adotou a energia solar como parte de seu
+              compromisso com a educação ambiental e a responsabilidade social.
+            </p>
+            <ul>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"  style="color: yellow"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
           </div>
-          <div class="form-floating mb-3">
-            <input
-              type="email"
-              class="form-control bg-light"
-              id="floatingEmail"
-              placeholder="Email"
-            />
-            <label for="floatingEmail">Email</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input
-              type="password"
-              readonly
-              class="form-control form-control-lg bg-light fs-6"
-              id="floatingPassword"
-              placeholder="Senha"
-            />
-            <label for="floatingPassword">Senha</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input
-              type="password"
-              readonly
-              class="form-control form-control-lg bg-light fs-6"
-              id="floatingPasswordConfirm"
-              placeholder="Confirmar Senha"
-            />
-            <label for="floatingPasswordConfirm">Confirmar Senha</label>
-          </div>
-          <div
-            class="input-group mb-3 align-items-center justify-content-center"
-          >
-            <button
-              class="btn btn-lg btn-primary w-10 fs-6"
-              onclick="handleEdit(event)"
-            >
-              Salvar
-            </button>
-          </div>
-        </div></content
-      >
+        </div>
+      </content>
       <footer class="text-center py-1">
         <p>&copy; 2023 Solaris Power. Todos os direitos reservados.</p>
       </footer>
@@ -181,7 +174,6 @@
   <script type="text/javascript" src="../utils/handleUser.js"></script>
   <script type="text/javascript" src="../utils/permission.js"></script>
   <script type="text/javascript" src="../constants/index.js"></script>
-  
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"

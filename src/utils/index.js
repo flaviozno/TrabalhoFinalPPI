@@ -12,3 +12,8 @@ const currencyFormatter = (currency) => {
     style: "currency",
   }).format(currency);
 };
+
+const currencyFormatterInput = (input) => {
+  const value = parseFloat(input.value.replace(/[^0-9.]/g, ""));
+  input.value = currencyFormatter(value);
+};

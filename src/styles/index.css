@@ -1,0 +1,165 @@
+.container__content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.container__content h3 {
+  font-weight: bold;
+  color: var(--300);
+  font-size: 1.24em;
+}
+
+.container__content p {
+  color: var(--black);
+  font-size: 1.24em;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cards__item {
+  width: 30%;
+  padding: 4rem 3rem;
+  background: var(--gray);
+
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 1px 1px 14px var(--light-shadow);
+
+  position: relative;
+}
+
+.cards__item::before {
+  content: "01";
+  font-size: 1.5rem;
+  width: 5rem;
+  height: 5rem;
+  color: var(--white);
+  background: linear-gradient(to bottom right, var(--300), var(--500));
+  border-radius: 50%;
+
+  position: absolute;
+  left: -2.5rem;
+  top: -2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards__item:nth-child(1):before {
+  content: "01";
+}
+.cards__item:nth-child(2):before {
+  content: "02";
+}
+.cards__item:nth-child(3):before {
+  content: "03";
+}
+
+.cards__item h3 {
+  color: var(--300);
+  font-size: 1.3rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.cards__item i {
+  font-size: 1.5rem;
+}
+
+.cards__item p {
+  color: var(--black);
+  font-size: 1.1rem;
+  text-align: center;
+}
+.content--left {
+  margin-top: 2rem;
+  text-align: end;
+}
+
+.divider {
+  height: 0.2rem;
+
+  background: var(--light-shadow);
+}
+
+.d1 {
+  transform: rotate(-3deg);
+}
+
+.d2 {
+  transform: rotate(-1deg);
+}
+
+.points {
+  margin-top: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.points__bullets {
+  margin-left: auto;
+}
+
+.points i {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: var(--500);
+}
+
+a {
+  text-decoration: none;
+}
+
+.points__bullets div {
+  position: relative;
+}
+
+.points__bullets div::before {
+  content: "✓";
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  font-size: 1.2rem;
+
+  color: var(--white);
+  background: linear-gradient(to bottom right, var(--300), var(--500));
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: -4rem;
+}
+
+.points__bullets div:not(:first-child) {
+  margin-top: 5rem;
+}
+
+.points__bullets h2 {
+  font-size: 1.4rem;
+}
+
+.points__bullets p {
+  font-size: 1.2rem;
+}

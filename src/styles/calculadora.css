@@ -1,0 +1,27 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+#results {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+#results p {
+  color: var(--light-dark);
+  font-weight: 500;
+  font-style: italic;
+  padding: .25rem;
+}

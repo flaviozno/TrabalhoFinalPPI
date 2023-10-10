@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
 
 :root {
+  --gray: #ececec;
   --white: #f5f5f5;
+  --black: #010101;
+  --light-dark: #383838;
   --100: #2857b5;
   --200: #1a3875;
   --300: #3675f5;
   --400: #0c1a36;
   --500: #3069db;
+
+  --light-shadow: rgba(0, 0, 0, 0.2);
 
   --trans-02: all 0.2s ease;
   --trans-03: all 0.3s ease;
@@ -68,11 +73,11 @@ span {
   overflow-x: hidden;
 }
 
-#BaseLayoutContainer header{
+#BaseLayoutContainer header {
   background-color: var(--300);
 }
 
-#BaseLayoutContainer footer{
+#BaseLayoutContainer footer {
   color: var(--400);
   border-top: 1px solid var(--400);
   align-items: center;

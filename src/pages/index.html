@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/GlobalThemes.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
   </head>
   <body>
     <div id="BaseLayoutContainer">
@@ -52,6 +53,18 @@
                   <span class="ms-2 d-none d-sm-inline">Produtos</span>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="./galeria.html" class="nav-link" aria-current="page">
+                  <i class="fa-solid fa-image"></i>
+                  <span class="ms-2 d-none d-sm-inline">Galeria</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./calculadora.html" class="nav-link" aria-current="page">
+                  <i class="fa-solid fa-calculator"></i>
+                  <span class="ms-2 d-none d-sm-inline">Calculadora</span>
+                </a>
+              </li>
               <li class="nav-item d-none" id="account">
                 <a href="./account.html" class="nav-link" aria-current="page">
                   <i class="fa-solid fa-user"></i>
@@ -59,13 +72,21 @@
                 </a>
               </li>
               <li class="nav-item d-none" id="crudItens">
-                <a href="./crud-itens.html" class="nav-link" aria-current="page">
+                <a
+                  href="./crud-itens.html"
+                  class="nav-link"
+                  aria-current="page"
+                >
                   <i class="fa-solid fa-list"></i>
                   <span class="ms-2 d-none d-sm-inline">CRUD Itens</span>
                 </a>
               </li>
               <li class="nav-item d-none" id="crudUsers">
-                <a href="./crud-users.html" class="nav-link" aria-current="page">
+                <a
+                  href="./crud-users.html"
+                  class="nav-link"
+                  aria-current="page"
+                >
                   <i class="fa-solid fa-users"></i>
                   <span class="ms-2 d-none d-sm-inline">CRUD Users</span>
                 </a>
@@ -89,7 +110,72 @@
           </div>
         </div>
       </div>
-      <content id="isVisible"> Here is content </content>
+      <content id="isVisible">
+        <div class="container__content">
+          <h3>Valores</h3>
+          <p>
+            Alguns pilares que sustentam nossa equipe e fazem com que nossos
+            clientes tenham a melhor experiência.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="cards__item">
+            <i class="fa-solid fa-sack-dollar"></i>
+            <h3>Custos</h3>
+            <p>
+              Reduzindo sua conta de energia, visando à sustentabilidade
+              institucional.
+            </p>
+          </div>
+          <div class="cards__item">
+            <i class="fa-brands fa-pagelines"></i>
+            <h3>Sustentabilidade</h3>
+            <p>Contribuindo para um meio ambiente mais limpo.</p>
+          </div>
+          <div class="cards__item">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h3>Energia</h3>
+            <p>
+              Promovendo a independência energética que irá benificiar você e o
+              planeta.
+            </p>
+          </div>
+        </div>
+        <div class="divider d1"> </div>
+        <div class="divider d2"> </div>
+        <div class="container__content content--left">
+          <h3>Recursos</h3>
+          <p>Explore nossos recursos e descubra o potêncial completo.</p>
+        </div>
+        <div class="points">
+          <i class="fa-solid fa-solar-panel"></i>
+          <div class="points__bullets">
+            <div>
+              <h2><a href="./calculadora.html">Calculadora</a></h2>
+              <p>Calcule sua Economia de Energia Solar</p>
+            </div>
+            <div>
+              <h2><a href="galeria.html">Galeria</a></h2>
+              <p>Inspire-se com nossa Galeria de Projetos</p>
+            </div>
+          </div>
+        </div>
+        <div class="container__content">
+          <h3>Encontre Profissionais Locais</h3>
+          <p>
+            Precisa de ajuda para instalar seus painéis solares?
+            <a href="profissionais.html">Consulte Profissionais</a> de energia
+            solar em sua região.
+          </p>
+        </div>
+        <div class="container__content content--left">
+          <h3>Perguntas Frequentes</h3>
+          <p>
+            Tire suas dúvidas com nossas
+            <a href="faq.html">Perguntas Frequentes</a> sobre energia solar.
+          </p>
+        </div>
+      </content>
       <footer class="text-center py-1">
         <p>&copy; 2023 Solaris Power. Todos os direitos reservados.</p>
       </footer>
@@ -98,7 +184,6 @@
   <script type="text/javascript" src="../utils/handleUser.js"></script>
   <script type="text/javascript" src="../utils/permission.js"></script>
   <script type="text/javascript" src="../constants/index.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"

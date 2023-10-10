@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--300);
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+button {
+  background-color: var(--300);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.professional {
+  border: 2px solid var(--300);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.professional h2 {
+  font-size: 1.2em;
+}
+
+.professional p {
+  font-size: 1em;
+}
