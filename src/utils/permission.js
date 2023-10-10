@@ -14,18 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     contentTag.classList.remove('d-none')
   }
 
-  if (publicRoutes.includes(route) == false) {
-    if (!user) {
-      Swal.fire({
-        title: "403 Forbidden",
-        text: "This route is private!!",
-        icon: "error",
-        timerProgressBar: true,
-        timer: 3500,
-        willClose: () => {
-          location.href = "../../src/index.html";
-        },
-      });
-    }
-  }
+  // if (publicRoutes.includes(route) == false) {
+  //   if (!user) {
+  //     Swal.fire({
+  //       title: "403 Forbidden",
+  //       text: "This route is private!!",
+  //       icon: "error",
+  //       timerProgressBar: true,
+  //       timer: 3500,
+  //       willClose: () => {
+  //         location.href = "../../src/index.html";
+  //       },
+  //     });
+  //   }
+  // }
 });
