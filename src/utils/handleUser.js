@@ -90,31 +90,17 @@ const handleLogin = (e) => {
     }
   }
 };
-if (
-  [
-    "index.html",
-    "sobre.html",
-    "produtos.html",
-    "crud-users.html",
-    "crud-itens.html",
-    "account.html",
-  ].includes(window.location.href.split("/")[4])
-)
-  document.addEventListener("DOMContentLoaded", () => {
-    let user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.name) {
-      updateUserStatus(user.name);
-    }
-  });
 
-if (
-  ["index.html", "sobre.html", "produtos.html"].includes(
-    window.location.href.split("/")[4]
-  )
-)
-  loginButton.addEventListener("click", () => {
-    location.href = "./login.html";
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  let user = JSON.parse(localStorage.getItem("user"));
+  if (user && user.name) {
+    updateUserStatus(user.name);
+  }
+});
+
+loginButton.addEventListener("click", () => {
+  location.href = "./login.html";
+});
 
 logoutButton.addEventListener("click", () => {
   localStorage.removeItem("user");
@@ -123,56 +109,53 @@ logoutButton.addEventListener("click", () => {
   location.href = "./index.html";
 });
 
-if (window.location.href.split("/")[4] === "register.html")
-  document.getElementById("photoUpload").addEventListener(
-    "change",
-    function () {
-      const fileInput = this;
-      const photoPreview = document.getElementById("photoPreview");
+document.getElementById("photoUpload").addEventListener(
+  "change",
+  function () {
+    const fileInput = this;
+    const photoPreview = document.getElementById("photoPreview");
 
-      if (fileInput.files && fileInput.files[0]) {
-        avatarPhoto = fileInput.files[0];
-        const reader = new FileReader();
+    if (fileInput.files && fileInput.files[0]) {
+      avatarPhoto = fileInput.files[0];
+      const reader = new FileReader();
 
-        reader.onload = function (e) {
-          const image = document.createElement("img");
-          image.src = e.target.result;
-          image.classList.add("rounded-circle");
-          image.style.width = "75px";
-          image.style.height = "75px";
+      reader.onload = function (e) {
+        const image = document.createElement("img");
+        image.src = e.target.result;
+        image.classList.add("rounded-circle");
+        image.style.width = "75px";
+        image.style.height = "75px";
 
-          photoPreview.innerHTML = "";
-          photoPreview.appendChild(image);
-        };
-
-        reader.readAsDataURL(fileInput.files[0]);
-      } else {
         photoPreview.innerHTML = "";
-      }
-    },
-    true
-  );
+        photoPreview.appendChild(image);
+      };
 
-if (window.location.href.split("/")[4] === "account.html")
-  document.addEventListener("DOMContentLoaded", () => {
-    let user = JSON.parse(localStorage.getItem("user"));
-    let name = document.getElementById("floatingName");
-    let email = document.getElementById("floatingEmail");
-    let password = document.getElementById("floatingPassword");
-    let passwordConfirm = document.getElementById("floatingPasswordConfirm");
-    let photoPreview = document.getElementById("photoPreview");
+      reader.readAsDataURL(fileInput.files[0]);
+    } else {
+      photoPreview.innerHTML = "";
+    }
+  },
+  true
+);
 
+document.addEventListener("DOMContentLoaded", () => {
+  let user = JSON.parse(localStorage.getItem("user"));
+  let name = document.getElementById("floatingName");
+  let email = document.getElementById("floatingEmail");
+  let password = document.getElementById("floatingPassword");
+  let passwordConfirm = document.getElementById("floatingPasswordConfirm");
+  let photoPreview = document.getElementById("photoPreview");
 
-    name.value = user.name;
-    email.value = user.email;
-    password.value = user.password;
-    passwordConfirm.value = user.password;
+  name.value = user.name;
+  email.value = user.email;
+  password.value = user.password;
+  passwordConfirm.value = user.password;
 
-    const image = document.createElement("img");
-    image.src = 'https://github.com/flaviozno.png';
-    image.classList.add("rounded-circle");
-    image.style.width = "75px";
-    image.style.height = "75px";
-    photoPreview.innerHTML = "";
-    photoPreview.appendChild(image);
-  });
+  const image = document.createElement("img");
+  image.src = "https://github.com/flaviozno.png";
+  image.classList.add("rounded-circle");
+  image.style.width = "75px";
+  image.style.height = "75px";
+  photoPreview.innerHTML = "";
+  photoPreview.appendChild(image);
+});

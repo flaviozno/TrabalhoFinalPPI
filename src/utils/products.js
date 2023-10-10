@@ -50,15 +50,18 @@ const renderProducts = (products) => {
   }
 };
 
-fetch("../../src/utils/products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    allProducts = data.produtos_paineis_solar;
-    renderProducts(allProducts);
-  })
-  .catch((error) => {
-    console.error("Erro ao carregar o arquivo JSON:", error);
-  });
+allProducts = produtos_paineis_solar
+renderProducts(produtos_paineis_solar)
+
+// fetch("products.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     allProducts = data.produtos_paineis_solar;
+//     renderProducts(allProducts);
+//   })
+//   .catch((error) => {
+//     console.error("Erro ao carregar o arquivo JSON:", error);
+//   });
 
 searchBar.addEventListener("input", () => {
   const searchTerm = searchBar.value;

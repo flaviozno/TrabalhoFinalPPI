@@ -1,12 +1,14 @@
 $(document).ready(async function () {
-  $("#usersTable").DataTable({
+  $("#itensTable").DataTable({
     searching: true,
-    data: user,
+    data: produtos_paineis_solar,
     columns: [
       { data: "id", searchable: true },
-      { data: "name", searchable: true },
-      { data: "email", searchable: true },
-      { data: "password" },
+      { data: "nome", searchable: true },
+      { data: "descricao", searchable: true },
+      { data: "img", searchable: true },
+      { data: "qtd", searchable: true },
+      { data: "preco", searchable: true },
       {
         data: null,
         render: function (data) {
@@ -15,7 +17,4 @@ $(document).ready(async function () {
       },
     ],
   });
-  // let { produtos_paineis_solar } = await fetch("../../src/utils/products.json").then(
-  //   (response) => response.json()
-  // );
 });
