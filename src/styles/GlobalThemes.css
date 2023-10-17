@@ -75,6 +75,10 @@ span {
 
 #BaseLayoutContainer header {
   background-color: var(--300);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #BaseLayoutContainer footer {

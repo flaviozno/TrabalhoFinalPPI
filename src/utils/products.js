@@ -15,7 +15,7 @@ const handleNumberOfStars = (number) => {
   for (let i = 0; i < 5; i++) {
     if (i < number) {
       estrelasHtml.push(
-        '<li><i class="fa-solid fa-star"  style="color: yellow"></i></li>'
+        '<li><i class="fa-solid fa-star" style="color: yellow"></i></li>'
       );
     } else {
       estrelasHtml.push('<li><i class="fa-solid fa-star"></i></li>');
@@ -29,14 +29,19 @@ const renderProducts = (products) => {
   if (products && products.length > 0) {
     products.forEach((produto) => {
       const card = document.createElement("div");
-      card.id = "contentCard";
+      card.className = "card";
       card.innerHTML = `
-            <img src="${produto.img}" alt="${produto.nome}" />
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-            <h6>${currencyFormatter(produto.preco)}</h6>
+            <img src="${produto.img}" alt="${
+        produto.nome
+      }" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title">${produto.nome}</h5>
+              <p class="card-text">${produto.descricao}</p>
+              <h6>${currencyFormatter(produto.preco)}</h6>
+              
+            </div>
             <ul>
-              ${handleNumberOfStars(produto.stars)}
+                ${handleNumberOfStars(produto.stars)}
             </ul>
             <button>Comprar</button>
           `;
@@ -50,8 +55,8 @@ const renderProducts = (products) => {
   }
 };
 
-allProducts = produtos_paineis_solar
-renderProducts(produtos_paineis_solar)
+allProducts = produtos_paineis_solar;
+renderProducts(produtos_paineis_solar);
 
 // fetch("products.json")
 //   .then((response) => response.json())
