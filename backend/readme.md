@@ -1,3 +1,7 @@
+## Create .dev.env
+  
+  crie o arquivo para poder adicionar as variaveis do db
+
 ## Create DB
 
   yarn sequelize db:create

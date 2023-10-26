@@ -1,13 +1,15 @@
+import env from "./dotenv.js";
+
 const db = {
-  host: "localhost",
-  username: "root",
-  password: "Flavio#0812",
-  schema: "ppi",
-  dialect: "mysql",
-  database: "ppi",
+  host: env.parsed.host || "localhost",
+  username: env.parsed.username || "root",
+  password: env.parsed.password || "root",
+  schema: env.parsed.schema || "ppi",
+  dialect: env.parsed.dialect || "mysql",
+  database: env.parsed.database || "ppi",
   define: {
     timestamps: true,
-    underscored: true
-  }
-}
-export default db
+    underscored: true,
+  },
+};
+export default db;

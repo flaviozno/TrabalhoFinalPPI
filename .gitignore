@@ -2,3 +2,4 @@
 *.rar
 *.7zip
 */node_modules
+*dev.env
