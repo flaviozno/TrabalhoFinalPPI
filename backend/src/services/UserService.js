@@ -80,6 +80,22 @@ class UserService {
     }
   }
 
+  async getAll(){
+    try {
+      const users = await User.findAll();
+      
+      if (!users){
+        throw new NotFoundException(this.SERVICE_NAME, error)
+      }
+
+      return users;
+    } catch (error) {
+      if (error instanceof Exception) throw error;
+
+      throw new ServiceFailedException(this.SERVICE_NAME, error);
+    }
+  }
+
   async getByEmail(email) {
     try {
       const user = await User.findOne({

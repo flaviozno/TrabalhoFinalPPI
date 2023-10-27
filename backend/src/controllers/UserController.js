@@ -20,9 +20,17 @@ class UserController {
         .send({ ...error, message: error.message });
     }
   }
-  async get(req, res){
-    res.status(200)
-    return res.json('Oii')
+  async getAll(req, res){
+    try {
+      const response = UserService.getAll();
+      res.status(201)
+      return res.json(response)
+    } catch (error) {
+      console.error(error);
+      return res
+        .status(error.status || 500)
+        .send({ ...error, message: error.message });
+    }
   }
 }
 export default new UserController();
