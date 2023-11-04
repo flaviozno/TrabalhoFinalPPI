@@ -23,9 +23,8 @@ class UserController {
 
   async getAll(req, res) {
     try {
-      console.log('eq222')
-      // const response = UserService.getAll();
-      res.status(201);
+      const response = await UserService.getAll();
+
       return res.json(response);
     } catch (error) {
       console.error(error);

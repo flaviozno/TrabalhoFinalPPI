@@ -1,6 +1,6 @@
 const express = require("express");
 const router = require("./config/router.js");
-const middlewares = require("./config/middleware.js");
+var cors = require('cors');
 
 const port = 3333;
 const app = express();
@@ -17,7 +17,8 @@ const _haltOnTimedout = (err, req, res, next) => {
   }
   return;
 };
-app.use(middlewares())
+
+app.use(cors())
 app.use(router);
 app.use(_haltOnTimedout);
 console.info("Router loaded");

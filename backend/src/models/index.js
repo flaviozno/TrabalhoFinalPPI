@@ -5,9 +5,6 @@ const path = require("path");
 const basename = path.basename(__filename);
 const config = require("../config/database.js");
 const db = {};
-const namespace = cls.createNamespace("ndm");
-
-Sequelize.useCLS(namespace);
 
 const sequelize = new Sequelize(
   config.database,
@@ -18,7 +15,6 @@ const sequelize = new Sequelize(
 
 fs.readdirSync(__dirname)
   .filter((file) => {
-    console.log(file)
     return (
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
     );

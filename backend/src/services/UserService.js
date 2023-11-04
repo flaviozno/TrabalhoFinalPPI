@@ -1,8 +1,9 @@
-const User = require("../models/User.js");
+const { User } = require("../models/index.js");
 const Exception = require("../exceptions/Exception.js");
 const NotFoundException = require("../exceptions/NotFoundException.js");
 const ErrorCode = require("../exceptions/ErrorCode.js");
 const StringUtils = require("../utils/StringUtils.js");
+const ServiceFailedException = require("../exceptions/ServiceFailedException.js");
 
 class UserService {
   constructor() {
@@ -80,16 +81,15 @@ class UserService {
     }
   }
 
-  async getAll(){
+  async getAll() {
     try {
-      console.log('eq')
       const users = await User.findAll();
-      console.log('eq')
-      if (!users){
-        throw new NotFoundException(this.SERVICE_NAME, error)
+
+      if (!users) {
+        throw new NotFoundException(this.SERVICE_NAME, error);
       }
 
-      return users;
+      return { users: users };
     } catch (error) {
       if (error instanceof Exception) throw error;
 
