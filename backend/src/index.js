@@ -1,6 +1,7 @@
 const express = require("express");
 const router = require("./config/router.js");
 var cors = require('cors');
+const bodyParser = require('body-parser');
 
 const port = 3333;
 const app = express();
@@ -18,9 +19,12 @@ const _haltOnTimedout = (err, req, res, next) => {
   return;
 };
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
-app.use(router);
 app.use(_haltOnTimedout);
+app.use(router);
 console.info("Router loaded");
 
 app.listen(port, function () {
