@@ -1,8 +1,8 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import { addDays } from "../utils/index.js";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const { addDays } = require("../utils/index.js");
 
-export default class {
+class User {
   constructor(sequelize, DataTypes) {
     const User = sequelize.define(
       "User",
@@ -47,8 +47,10 @@ export default class {
           type: this.type,
           expiresToken: addDays(7),
         },
-        "405fe60a5db14040114c0983e14cd5e2" //MD5 Hash de PPI
+        "405fe60a5db14040114c0983e14cd5e2" // MD5 Hash de PPI
       );
     };
   }
 }
+
+module.exports = User;

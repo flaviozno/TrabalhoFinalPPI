@@ -1,5 +1,5 @@
-import ErrorCode from "./ErrorCode.js";
-import Exception from "./Exception.js";
+const ErrorCode = require("./ErrorCode.js");
+const Exception = require("./Exception.js");
 
 class NotFoundException extends Exception {
   constructor(serviceName, objectName) {
@@ -14,4 +14,4 @@ class NotFoundException extends Exception {
   }
 }
 
-export default NotFoundException;
+module.exports = NotFoundException;

@@ -1,4 +1,4 @@
-export default class Exception extends Error {
+class Exception extends Error {
   constructor(error) {
     super(error.message);
     this.code = error.code;
@@ -6,3 +6,5 @@ export default class Exception extends Error {
     Object.setPrototypeOf(this, new.target.prototype);
   }
 }
+
+module.exports = Exception;

@@ -6,7 +6,7 @@ const ErrorCode = {
   },
   REQUEST_TIMEDOUT: {
     code: "REQUEST_TIMEDOUT",
-    message: "Tempo máximo de espera antingido!",
+    message: "Tempo máximo de espera atingido!",
     status: 503,
   },
   NOT_FOUND: {
@@ -39,8 +39,8 @@ const ErrorCode = {
     message: "Senha atual incorreta",
     status: 400,
   },
-  UNAUTHORIZERED_SERVICES: {
-    code: "UNAUTHORIZERED_SERVICES",
+  UNAUTHORIZED_SERVICES: {
+    code: "UNAUTHORIZED_SERVICES",
     message: "Sem permissão para fazer isso",
     status: 403,
   },
@@ -53,4 +53,4 @@ const ErrorCode = {
   },
 };
 
-export default ErrorCode;
+module.exports = ErrorCode;

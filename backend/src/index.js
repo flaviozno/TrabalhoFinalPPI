@@ -1,7 +1,6 @@
-import express from "express";
-import routes from "./config/router.js";
-import cors from "cors";
-
+const express = require("express");
+const router = require("./config/router.js");
+const middlewares = require("./config/middleware.js");
 
 const port = 3333;
 const app = express();
@@ -18,12 +17,11 @@ const _haltOnTimedout = (err, req, res, next) => {
   }
   return;
 };
-
-app.use(cors());
-app.use(routes);
+app.use(middlewares())
+app.use(router);
 app.use(_haltOnTimedout);
-console.info("Routes loaded");
+console.info("Router loaded");
 
-app.listen(port, () => {
-  console.info(`Server is runnig on port ${port}`);
+app.listen(port, function () {
+  console.info("Server is running on port " + port);
 });

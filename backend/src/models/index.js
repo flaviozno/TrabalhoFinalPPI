@@ -1,9 +1,9 @@
-import Sequelize from "sequelize";
-import cls from "cls-hooked";
-import fs from "fs";
-import path from "path";
+const Sequelize = require("sequelize");
+const cls = require("cls-hooked");
+const fs = require("fs");
+const path = require("path");
 const basename = path.basename(__filename);
-import config from "../config/database.js";
+const config = require("../config/database.js");
 const db = {};
 const namespace = cls.createNamespace("ndm");
 
@@ -47,4 +47,4 @@ db.transaction = (task) => {
 
 sequelize.sync();
 
-export default db;
+module.exports = db;

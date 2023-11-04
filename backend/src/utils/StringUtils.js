@@ -9,5 +9,6 @@ class StringUtils {
       )
       .join(" ");
   }
-};
-export default new StringUtils();
+}
+
+module.exports = new StringUtils();

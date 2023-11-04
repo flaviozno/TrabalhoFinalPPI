@@ -1,8 +1,8 @@
-import User from "../models/User.js";
-import Exception from "../exceptions/Exception.js";
-import NotFoundException from "../exceptions/NotFoundException.js";
-import ErrorCode from "../exceptions/ErrorCode.js";
-import StringUtils from "../utils/StringUtils.js";
+const User = require("../models/User.js");
+const Exception = require("../exceptions/Exception.js");
+const NotFoundException = require("../exceptions/NotFoundException.js");
+const ErrorCode = require("../exceptions/ErrorCode.js");
+const StringUtils = require("../utils/StringUtils.js");
 
 class UserService {
   constructor() {
@@ -82,8 +82,9 @@ class UserService {
 
   async getAll(){
     try {
+      console.log('eq')
       const users = await User.findAll();
-      
+      console.log('eq')
       if (!users){
         throw new NotFoundException(this.SERVICE_NAME, error)
       }
@@ -113,5 +114,4 @@ class UserService {
     }
   }
 }
-
-export default new UserService();
+module.exports = new UserService();

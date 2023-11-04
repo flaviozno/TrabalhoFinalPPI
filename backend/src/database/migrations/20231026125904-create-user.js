@@ -1,6 +1,6 @@
 "use strict";
 
-export async function up(queryInterface, Sequelize) {
+async function up(queryInterface, Sequelize) {
   return queryInterface.createTable("Users", {
     id: {
       primaryKey: true,
@@ -52,6 +52,12 @@ export async function up(queryInterface, Sequelize) {
     },
   });
 }
-export async function down(queryInterface, Sequelize) {
+
+async function down(queryInterface, Sequelize) {
   return queryInterface.dropTable("Users");
 }
+
+module.exports = {
+  up,
+  down,
+};

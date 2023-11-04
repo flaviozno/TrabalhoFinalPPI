@@ -1,4 +1,4 @@
-export const dateFormatter = (date) => {
+const dateFormatter = (date) => {
   return new Intl.DateTimeFormat("pt-BR", {
     year: "numeric",
     month: "2-digit",
@@ -6,8 +6,13 @@ export const dateFormatter = (date) => {
   }).format(date);
 };
 
-export const addDays = (daysToAdd) => {
+const addDays = (daysToAdd) => {
   const newDate = new Date();
   newDate.setDate(newDate.getDate() + daysToAdd);
   return dateFormatter(newDate);
+};
+
+module.exports = {
+  dateFormatter,
+  addDays,
 };

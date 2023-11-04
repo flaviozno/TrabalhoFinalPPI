@@ -1,4 +1,4 @@
-import UserService from "../services/UserService.js";
+const UserService = require("../services/UserService.js");
 
 class UserController {
   async create(req, res) {
@@ -20,11 +20,13 @@ class UserController {
         .send({ ...error, message: error.message });
     }
   }
-  async getAll(req, res){
+
+  async getAll(req, res) {
     try {
-      const response = UserService.getAll();
-      res.status(201)
-      return res.json(response)
+      console.log('eq222')
+      // const response = UserService.getAll();
+      res.status(201);
+      return res.json(response);
     } catch (error) {
       console.error(error);
       return res
@@ -33,4 +35,5 @@ class UserController {
     }
   }
 }
-export default new UserController();
+
+module.exports = new UserController();
