@@ -22,10 +22,6 @@ async function up(queryInterface, Sequelize) {
       unique: true,
       allowNull: false,
     },
-    phone: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
     passwordHash: {
       type: Sequelize.STRING,
       allowNull: false,

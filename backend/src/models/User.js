@@ -13,9 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       isAdmin: DataTypes.BOOLEAN,
       name: DataTypes.STRING,
-      type: DataTypes.STRING,
       email: DataTypes.STRING,
-      phone: DataTypes.STRING,
       password: DataTypes.VIRTUAL,
       passwordHash: DataTypes.STRING,
       passwordResetExpiresIn: DataTypes.DATE,
@@ -26,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeSave: async (user) => {
           if (user.password) {
+            console.log(user.password);
             user.passwordHash = await bcrypt.hash(user.password, 8);
           }
         },

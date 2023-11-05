@@ -4,7 +4,6 @@ const NotFoundException = require("../exceptions/NotFoundException.js");
 const ErrorCode = require("../exceptions/ErrorCode.js");
 const StringUtils = require("../utils/StringUtils.js");
 const ServiceFailedException = require("../exceptions/ServiceFailedException.js");
-
 class UserService {
   constructor() {
     this.SERVICE_NAME = "USER";
@@ -40,9 +39,8 @@ class UserService {
         isAdmin: newUser.isAdmin,
         email: newUser.email,
         name: StringUtils.formatName(newUser.name),
-        type: newUser.type,
         password: newUser.password,
-        phone: newUser.phone,
+        profilePhotoLink: newUser.profilePhotoLink,
       });
 
       return user;
@@ -100,7 +98,7 @@ class UserService {
   async getByEmail(email) {
     try {
       const user = await User.findOne({
-        where: { email: { [Op.iLike]: email } },
+        where: { email: email },
       });
 
       if (!user) {

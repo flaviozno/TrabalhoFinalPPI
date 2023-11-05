@@ -48,7 +48,7 @@ const ErrorCode = {
     EMAIL_ALREADY_IN_USE: {
       code: "EMAIL_ALREADY_IN_USE",
       message: "Já existe um usuário com esse email!",
-      status: 400,
+      status: 409,
     },
   },
 };

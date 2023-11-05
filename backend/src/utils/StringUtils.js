@@ -1,5 +1,5 @@
 class StringUtils {
-  static formatName(name) {
+  formatName(name) {
     return name
       .split(" ")
       .map((word) =>
