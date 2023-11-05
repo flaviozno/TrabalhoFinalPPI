@@ -29,8 +29,9 @@ const handleEdit = (e) => {
   e.preventDefault();
 };
 
-const handleRegister = (e) => {
+const handleRegister = async (e) => {
   e.preventDefault();
+  const axios = new AxiosService();
   let name = document.getElementById("floatingName");
   let email = document.getElementById("floatingEmail");
   let password = document.getElementById("floatingPassword");
@@ -47,17 +48,19 @@ const handleRegister = (e) => {
   if (password.value.trim() !== passwordConfirm.value.trim()) {
     password.classList.add("is-invalid");
   } else {
-    const response = registerUser({
+    const response = await axios.createUser({
       name: name.value.trim(),
       email: email.value.trim(),
       password: password.value.trim(),
       avatarUrl: avatarPhoto,
     });
-    if (response) {
-      isLoggedIn = true;
-      localStorage.setItem("user", JSON.stringify(response));
-      location.href = "./index.html";
-    }
+    console.log(response)
+    // const response = registerUser();
+    // if (response) {
+    //   isLoggedIn = true;
+    //   localStorage.setItem("user", JSON.stringify(response));
+    //   location.href = "./index.html";
+    // }
   }
 };
 
