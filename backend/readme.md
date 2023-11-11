@@ -10,9 +10,17 @@
 
   yarn sequelize migration:create --name=migrationName
 
+## Create new seeder
+
+  yarn sequelize seed:generate --name=seederName
+
 ## Run migrations
 
   yarn sequelize db:migrate
+
+## Run seeder
+
+  yarn sequelize db:seed:all
 
 ## Undo migrations
 

@@ -6,9 +6,28 @@ const filterProductsByName = (name, allProducts) => {
   return filteredProducts;
 };
 
+const getProducts = () => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "http://localhost:3333/api/products", true);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText).products);
+        } else {
+          reject(new Error(`Erro na requisição: ${xhr.status}`));
+        }
+      }
+    };
+
+    xhr.send();
+  });
+};
+
 const contentDiv = document.getElementById("produtos");
 const searchBar = document.getElementById("searchBar");
-let allProducts = [];
 
 const handleNumberOfStars = (number) => {
   const estrelasHtml = [];
@@ -31,14 +50,13 @@ const renderProducts = (products) => {
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-            <img src="${produto.img}" alt="${
-        produto.nome
+            <img src="${produto.imgURL}" alt="${
+        produto.name
       }" class="card-img-top"/>
             <div class="card-body">
-              <h5 class="card-title">${produto.nome}</h5>
-              <p class="card-text">${produto.descricao}</p>
-              <h6>${currencyFormatter(produto.preco)}</h6>
-              
+              <h5 class="card-title">${produto.name}</h5>
+              <p class="card-text">${produto.description}</p>
+              <h6>${currencyFormatter(produto.price)}</h6>
             </div>
             <ul>
                 ${handleNumberOfStars(produto.stars)}
@@ -55,21 +73,16 @@ const renderProducts = (products) => {
   }
 };
 
-allProducts = produtos_paineis_solar;
-renderProducts(produtos_paineis_solar);
+getProducts()
+  .then((products) => {
+    renderProducts(products);
 
-// fetch("products.json")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     allProducts = data.produtos_paineis_solar;
-//     renderProducts(allProducts);
-//   })
-//   .catch((error) => {
-//     console.error("Erro ao carregar o arquivo JSON:", error);
-//   });
-
-searchBar.addEventListener("input", () => {
-  const searchTerm = searchBar.value;
-  const filteredProducts = filterProductsByName(searchTerm, allProducts);
-  renderProducts(filteredProducts);
-});
+    searchBar.addEventListener("input", () => {
+      const searchTerm = searchBar.value;
+      const filteredProducts = filterProductsByName(searchTerm, products);
+      renderProducts(filteredProducts);
+    });
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });

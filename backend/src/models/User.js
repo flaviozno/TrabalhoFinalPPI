@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeSave: async (user) => {
           if (user.password) {
-            console.log(user.password);
             user.passwordHash = await bcrypt.hash(user.password, 8);
           }
         },
@@ -44,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
         type: this.type,
         expiresToken: addDays(7),
       },
-      "405fe60a5db14040114c0983e14cd5e2" // MD5 Hash de PPI
+      "405fe60a5db14040114c0983e14cd5e2"
     );
   };
   return User;

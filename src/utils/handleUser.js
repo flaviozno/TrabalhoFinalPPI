@@ -23,7 +23,8 @@ const updateUserStatus = (username) => {
 const loginButton = document.getElementById("loginButton");
 const logoutButton = document.getElementById("logoutButton");
 
-let isLoggedIn = false;
+let isLoggedIn =
+  JSON.parse(localStorage.getItem("user")) == null ? false : true;
 
 const handleEdit = (e) => {
   e.preventDefault();
@@ -54,18 +55,15 @@ const handleRegister = async (e) => {
       password: password.value.trim(),
       avatarUrl: avatarPhoto,
     });
-    console.log(response)
-    // const response = registerUser();
-    // if (response) {
-    //   isLoggedIn = true;
-    //   localStorage.setItem("user", JSON.stringify(response));
-    //   location.href = "./index.html";
-    // }
+    if (response) {
+      console.log(response);
+    }
   }
 };
 
-const handleLogin = (e) => {
+const handleLogin = async (e) => {
   e.preventDefault();
+  const axios = new AxiosService();
   let email = document.getElementById("floatingInput");
   let password = document.getElementById("floatingPassword");
   if (email.value.trim() === "") {
@@ -74,13 +72,13 @@ const handleLogin = (e) => {
   if (password.value.trim() === "") {
     password.classList.add("is-invalid");
   } else {
-    const response = loginUser({
+    const response = await axios.authUser({
       email: email.value.trim(),
       password: password.value.trim(),
     });
-    if (response) {
+    if (response && response.status == 200) {
       isLoggedIn = true;
-      localStorage.setItem("user", JSON.stringify(response));
+      localStorage.setItem("user", JSON.stringify(response.data));
       location.href = "./index.html";
     } else {
       Swal.fire({
@@ -96,8 +94,8 @@ const handleLogin = (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("user"));
-  if (user && user.name) {
-    updateUserStatus(user.name);
+  if (user && user.user.name) {
+    updateUserStatus(user.user.name);
   }
 });
 
@@ -149,10 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let passwordConfirm = document.getElementById("floatingPasswordConfirm");
   let photoPreview = document.getElementById("photoPreview");
 
-  name.value = user.name;
-  email.value = user.email;
-  password.value = user.password;
-  passwordConfirm.value = user.password;
+  name.value = user.user.name;
+  email.value = user.user.email;
+  password.value = user.user.passwordHash;
+  passwordConfirm.value = user.user.passwordHash;
 
   const image = document.createElement("img");
   image.src = "https://github.com/flaviozno.png";

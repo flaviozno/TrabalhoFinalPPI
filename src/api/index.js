@@ -3,6 +3,10 @@ class AxiosService {
     this.baseURL = "http://localhost:3333/api";
   }
 
+  authUser(data){
+    return axios.post(`${this.baseURL}/auth`, data);
+  }
+
   getUsers() {
     return axios.get(`${this.baseURL}/users`);
   }
