@@ -1,5 +1,19 @@
 # Trabalho Final de PPI - Projeto "Solaris Power"
 
+## Como executar
+Para executar o banck-end use a versão `18.16.0` do **NodeJS** e o **Yarn** na versão `1.22.19`. 
+
+Crie o arquivo `.dev.env` e configure seguindo o exemplo do `.exemplo.env`. 
+
+Navegue até o diretório backend e execute:
+
+    - yarn add
+    - yarn sequelize db:create 
+    - yarn sequelize db:migrate
+    - yarn sequelize db:seed:all
+    - node .\src\database\seeders\products.js
+    - yarn dev
+  
 ## Visão Geral
 
 O projeto "Solaris Power" é uma plataforma online dedicada a promover a adoção de sistemas de energia solar como uma alternativa limpa e acessível de geração de eletricidade. Nosso objetivo é fornecer informações abrangentes sobre energia solar, conectar consumidores a empresas de energia solar e facilitar o processo de transição para uma fonte de energia mais sustentável.
