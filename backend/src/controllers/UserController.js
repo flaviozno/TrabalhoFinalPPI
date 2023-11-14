@@ -7,7 +7,7 @@ class UserController {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        isAdmin: req.body.isAdmin ? 1 : 0,
+        isAdmin: req.body.isAdmin ? true : false,
         profilePhotoLink: req.body.photo,
       };
 

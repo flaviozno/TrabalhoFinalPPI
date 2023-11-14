@@ -6,6 +6,16 @@ const dateFormatter = (date) => {
   }).format(date);
 };
 
+const compareDates = (date1, date2) => {
+  if (date1 < date2) {
+    return -1;
+  } else if (date1 > date2) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
 const addDays = (daysToAdd) => {
   const newDate = new Date();
   newDate.setDate(newDate.getDate() + daysToAdd);
@@ -15,4 +25,5 @@ const addDays = (daysToAdd) => {
 module.exports = {
   dateFormatter,
   addDays,
+  compareDates
 };
