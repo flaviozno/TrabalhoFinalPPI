@@ -24,6 +24,7 @@ class UserController {
 
   async getAll(req, res) {
     try {
+      console.log(req.decodedToken)
       const response = await UserService.getAll();
 
       return res.json(response);

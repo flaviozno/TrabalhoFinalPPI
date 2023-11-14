@@ -38,9 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     return jwt.sign(
       {
         id: this.id,
-        roles: this.roles,
-        customerId: this.customerId,
-        type: this.type,
+        isAdmin: this.isAdmin,
         expiresToken: addDays(7),
       },
       "405fe60a5db14040114c0983e14cd5e2"
