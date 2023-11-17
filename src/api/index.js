@@ -1,105 +1,35 @@
-class AxiosService {
-  constructor() {
-    this.baseURL = "http://localhost:3333/api";
-  }
+  class AxiosService {
+    constructor() {
+      this.baseURL = "http://localhost:3333/api";
 
-  authUser(data){
-    return axios.post(`${this.baseURL}/auth`, data);
-  }
-
-  getUsers() {
-    return axios.get(`${this.baseURL}/users`);
-  }
-
-  createUser(data) {
-    return axios.post(`${this.baseURL}/users`, data);
-  }
-
-  put(url, data, config = {}) {
-    return axios.put(this.baseURL + url, data, config);
-  }
-
-  delete(url, config = {}) {
-    return axios.delete(this.baseURL + url, config);
-  }
-}
-
-class AjaxService {
-  constructor() {
-    this.baseURL = "http://localhost:3333/api";
-  }
-
-  get(url) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("GET", this.baseURL + url);
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          resolve(JSON.parse(xhr.responseText));
-        } else {
-          reject(xhr.statusText);
+      axios.interceptors.request.use(config => {
+        const token = JSON.parse(localStorage.getItem("user")).token;  
+        if (token) {
+          config.headers.Authorization = `Bearer ${token}`;
         }
-      };
-      xhr.onerror = () => {
-        reject(xhr.statusText);
-      };
-      xhr.send();
-    });
+  
+        return config;
+      });
+    }
+
+    authUser(data){
+      return axios.post(`${this.baseURL}/auth`, data);
+    }
+
+    getUsers() {
+      return axios.get(`${this.baseURL}/users`);
+    }
+
+    createUser(data) {
+      return axios.post(`${this.baseURL}/users`, data);
+    }
+
+    put(url, data, config = {}) {
+      return axios.put(this.baseURL + url, data, config);
+    }
+
+    delete(url, config = {}) {
+      return axios.delete(this.baseURL + url, config);
+    }
   }
 
-  post(url, data) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", this.baseURL + url);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = () => {
-        if (xhr.status === 201) {
-          resolve(JSON.parse(xhr.responseText));
-        } else {
-          reject(xhr.statusText);
-        }
-      };
-      xhr.onerror = () => {
-        reject(xhr.statusText);
-      };
-      xhr.send(JSON.stringify(data));
-    });
-  }
-
-  put(url, data) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("PUT", this.baseURL + url);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          resolve(JSON.parse(xhr.responseText));
-        } else {
-          reject(xhr.statusText);
-        }
-      };
-      xhr.onerror = () => {
-        reject(xhr.statusText);
-      };
-      xhr.send(JSON.stringify(data));
-    });
-  }
-
-  delete(url) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("DELETE", this.baseURL + url);
-      xhr.onload = () => {
-        if (xhr.status === 204) {
-          resolve();
-        } else {
-          reject(xhr.statusText);
-        }
-      };
-      xhr.onerror = () => {
-        reject(xhr.statusText);
-      };
-      xhr.send();
-    });
-  }
-}

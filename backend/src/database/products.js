@@ -3,7 +3,6 @@ const { Products } = require("../models/index");
 const productsData = {
   produtos_paineis_solar: [
     {
-      id: 1,
       name: "Painel Solar Residencial 300W",
       imgURL:
         "https://www.galaxcommerce.com.br/sistema/upload/1671/produtos/painel-solar-fotovoltaico-60w-resun_2022-07-14_08-16-16_0_273.png",
@@ -14,7 +13,6 @@ const productsData = {
       amount: 100,
     },
     {
-      id: 2,
       name: "Painel Solar Portátil 50W",
       imgURL:
         "https://www.galaxcommerce.com.br/sistema/upload/1671/produtos/painel-solar-fotovoltaico-60w-resun_2022-07-14_08-16-16_0_273.png",
@@ -25,7 +23,6 @@ const productsData = {
       amount: 100,
     },
     {
-      id: 3,
       name: "Painel Solar Comercial 500W",
       imgURL:
         "https://www.galaxcommerce.com.br/sistema/upload/1671/produtos/painel-solar-fotovoltaico-60w-resun_2022-07-14_08-16-16_0_273.png",
@@ -36,7 +33,6 @@ const productsData = {
       amount: 100,
     },
     {
-      id: 4,
       name: "Painel Solar Flexível 150W",
       imgURL:
         "https://www.galaxcommerce.com.br/sistema/upload/1671/produtos/painel-solar-fotovoltaico-60w-resun_2022-07-14_08-16-16_0_273.png",
@@ -47,7 +43,6 @@ const productsData = {
       amount: 100,
     },
     {
-      id: 5,
       name: "Painel Solar de Alta Eficiência 400W",
       imgURL:
         "https://www.galaxcommerce.com.br/sistema/upload/1671/produtos/painel-solar-fotovoltaico-60w-resun_2022-07-14_08-16-16_0_273.png",

@@ -17,6 +17,26 @@ const getProducts = () => {
     xhr.send();
   });
 };
+const deleteProduct = (data) => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("DELETE", `http://localhost:3333/api/products/${data}`, true);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText).products);
+          window.location.reload();
+        } else {
+          reject(new Error(`Erro na requisição: ${xhr.status}`));
+        }
+      }
+    };
+
+    xhr.send();
+  });
+};
 
 $(document).ready(async function () {
   try {
@@ -26,7 +46,6 @@ $(document).ready(async function () {
       searching: true,
       data: products,
       columns: [
-        { data: "id", searchable: true },
         { data: "name", searchable: true },
         { data: "description", searchable: true },
         { data: "imgURL", searchable: true },
@@ -35,7 +54,7 @@ $(document).ready(async function () {
         {
           data: null,
           render: function (data) {
-            return `<button class="btn btn-danger btn-sm" onclick="deleteProduct(${data.id})">Excluir</button>`;
+            return `<button class="btn btn-danger btn-sm" onclick="deleteProduct('${data.id}')">Excluir</button>`;
           },
         },
       ],
