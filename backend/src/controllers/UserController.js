@@ -3,11 +3,12 @@ const UserService = require("../services/UserService.js");
 class UserController {
   async create(req, res) {
     try {
+      console.log(req.body);
       const newUser = {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        isAdmin: req.body.isAdmin ? true : false,
+        isAdmin: false,
         profilePhotoLink: req.body.photo,
       };
 

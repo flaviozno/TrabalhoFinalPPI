@@ -23,8 +23,7 @@ const updateUserStatus = (username) => {
 const loginButton = document.getElementById("loginButton");
 const logoutButton = document.getElementById("logoutButton");
 
-let isLoggedIn =
-  JSON.parse(localStorage.getItem("user")) == null ? false : true;
+let isLoggedIn = JSON.parse(localStorage.getItem("user"));
 
 const handleEdit = (e) => {
   e.preventDefault();
@@ -80,14 +79,6 @@ const handleLogin = async (e) => {
       isLoggedIn = true;
       localStorage.setItem("user", JSON.stringify(response.data));
       location.href = "./index.html";
-    } else {
-      Swal.fire({
-        title: "Error",
-        text: "User not found!",
-        icon: "error",
-        timerProgressBar: true,
-        timer: 3500,
-      });
     }
   }
 };

@@ -3,7 +3,7 @@
       this.baseURL = "http://localhost:3333/api";
 
       axios.interceptors.request.use(config => {
-        const token = JSON.parse(localStorage.getItem("user")).token;  
+        const token = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).token : null
         if (token) {
           config.headers.Authorization = `Bearer ${token}`;
         }
@@ -17,7 +17,7 @@
     }
 
     getUsers() {
-      return axios.get(`${this.baseURL}/users`);
+      return axios.get(`${this.baseURL}/users-admincontetn`);
     }
 
     createUser(data) {

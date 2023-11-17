@@ -1,13 +1,12 @@
 $(document).ready(async function () {
   try {
     const axios = new AxiosService();
-    const response = await axios.getUsers()
-    
+    const response = await axios.getUsers();
+
     $("#usersTable").DataTable({
       searching: true,
       data: response.data.users,
       columns: [
-        { data: "id", searchable: true },
         { data: "name", searchable: true },
         { data: "email", searchable: true },
         { data: "passwordHash" },
