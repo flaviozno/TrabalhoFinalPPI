@@ -10,4 +10,5 @@ const publicRoutes = [
   "galeria.html",
   "faq.html",
   "profissionais.html",
+  "",
 ];
