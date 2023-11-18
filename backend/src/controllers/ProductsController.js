@@ -13,11 +13,11 @@ class ProductsController {
         .send({ ...error, message: error.message });
     }
   }
-  async create(req, res){
+  async create(req, res) {
     try {
       const response = await ProductsService.create(req.body);
 
-      return res.json(response)
+      return res.json(response);
     } catch (error) {
       console.error(error);
       return res
@@ -29,6 +29,21 @@ class ProductsController {
     try {
       const response = await ProductsService.deleteById(req.params.id);
       if (response.status == 200) return res.status(200).json(response);
+    } catch (error) {
+      console.error(error);
+      return res
+        .status(error.status || 500)
+        .send({ ...error, message: error.message });
+    }
+  }
+  async update(req, res) {
+    try {
+      const productId = req.params.id;
+      const updatedData = req.body;
+
+      const response = await ProductsService.update(productId, updatedData);
+
+      return res.json(response);
     } catch (error) {
       console.error(error);
       return res

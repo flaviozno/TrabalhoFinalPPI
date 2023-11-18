@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       passwordHash: DataTypes.STRING,
       passwordResetExpiresIn: DataTypes.DATE,
       passwordResetToken: DataTypes.STRING,
-      profilePhotoLink: DataTypes.STRING,
+      profilePhotoLink: DataTypes.TEXT,
     },
     {
       hooks: {

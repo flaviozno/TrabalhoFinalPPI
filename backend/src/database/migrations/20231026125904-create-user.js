@@ -43,7 +43,7 @@ async function up(queryInterface, Sequelize) {
       allowNull: false,
     },
     profilePhotoLink: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: true,
     },
   });

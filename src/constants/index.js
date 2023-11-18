@@ -12,3 +12,8 @@ const publicRoutes = [
   "profissionais.html",
   "",
 ];
+
+const adminRoutes = [
+  "crud-itens.html",
+  "crud-users.html"
+]

@@ -22,7 +22,22 @@ class UserService {
       "profilePhotoLink",
     ];
   }
+  async findByEmail(email) {
+    try {
+      const user = await User.findOne({
+        where: { email: email },
+      });
 
+      if (!user) {
+        throw new NotFoundException(this.SERVICE_NAME, this.OBJECT_NAME);
+      }
+
+      return user;
+    } catch (error) {
+      if (error instanceof Exception) throw error;
+      throw new ServiceFailedException(this.SERVICE_NAME, error);
+    }
+  }
   async create(newUser) {
     try {
       await this.getByEmail(newUser.email)

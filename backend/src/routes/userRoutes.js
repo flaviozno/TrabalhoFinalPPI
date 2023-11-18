@@ -5,6 +5,7 @@ const routes = Router();
 const usersRoutes = Router();
 
 usersRoutes.post("/users", UserController.create);
+usersRoutes.patch("/users", UserController.update);
 
 routes.use(usersRoutes);
 
