@@ -1,6 +1,6 @@
 class AxiosService {
   constructor() {
-    this.baseURL = "http://localhost:3333/api";
+    this.baseURL = "https://api-dj3w.onrender.com/api";
 
     axios.interceptors.request.use((config) => {
       const token = JSON.parse(localStorage.getItem("user"))
@@ -38,7 +38,7 @@ class AxiosService {
 
 class AjaxService {
   constructor() {
-    this.baseURL = "http://localhost:3333/api";
+    this.baseURL = "https://api-dj3w.onrender.com/api";
   }
 
   async createProduct(formData) {

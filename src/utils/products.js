@@ -10,7 +10,7 @@ const getProducts = () => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://localhost:3333/api/products", true);
+    xhr.open("GET", "https://api-dj3w.onrender.com/api/products", true);
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
