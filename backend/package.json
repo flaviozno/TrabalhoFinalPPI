@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node --watch ./src/index.js",
+    "prod": "node ./src/index.js",
     "products": "node ./src/database/products.js"
   },
   "dependencies": {
