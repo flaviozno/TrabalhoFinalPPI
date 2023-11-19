@@ -1,9 +1,9 @@
 const env = require("./dotenv.js");
 
 const db = {
-  host: process.env.host || "localhost",
-  username: process.env.username || "root",
-  password: process.env.password || "",
+  host: process.env.url || "localhost",
+  username: process.env.usernameDB || "root",
+  password: process.env.passwordDB || "",
   dialect: process.env.dialect || "mysql",
   database: process.env.database || "ppi",
   logging: false,
