@@ -1,11 +1,11 @@
 const env = require("./dotenv.js");
 
 const db = {
-  host: env.parsed.host || "localhost",
-  username: env.parsed.username || "root",
-  password: env.parsed.password || "",
-  dialect: env.parsed.dialect || "mysql",
-  database: env.parsed.database || "ppi",
+  host: process.env.host || "localhost",
+  username: process.env.username || "root",
+  password: process.env.password || "",
+  dialect: process.env.dialect || "mysql",
+  database: process.env.database || "ppi",
   logging: false,
   pool: {
     max: 4,
